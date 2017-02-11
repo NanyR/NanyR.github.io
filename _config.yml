@@ -1,0 +1,21 @@
+# Site settings
+title: Concrete Learning
+header-img: img/home-bg.png
+email: nanyramirez0@gmail.com
+copyright_name: NanyR
+description: > # this means to ignore newlines until "baseurl:"
+  Path to learning how to code
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: nanyramirez0
+github_username:  NanyR
+learn_profile: NanyR
+email_username: nanyramirez0@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
