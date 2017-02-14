@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Conding as Social Sculpture"
-date:   2017-02-14 02:57:11 +0000
+title:  "Coding as Social Sculpture"
+date:   2017-02-13 21:57:12 -0500
 ---
 
 
