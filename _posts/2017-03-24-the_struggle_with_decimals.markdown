@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "THE STRUGGLE WITH DECIMALS"
-date:   2017-03-24 13:53:46 +0000
+date:   2017-03-24 09:53:47 -0400
 ---
 
 
