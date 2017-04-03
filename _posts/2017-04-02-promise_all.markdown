@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  "PROMISE ALL"
-date:   2017-04-02 19:48:18 +0000
+date:   2017-04-02 15:48:19 -0400
 ---
 
 
 
 Ever since we started learning Javascript and AJAX we have been hearing more and more about the promise object which
-"represents a value which may be available now, or in the future, or never" (Mozilla Developer Network). Promises are good for asynchronous functionalities, especially when you have certain functions that depend or need some other code that is dependent on some other function to be completed before running. jQuery AJAX requests and fetch requests always return a promise, or a 'thenable' object which essentially passes on the data returned from the request as an argument to another resolve function, unless some error occured in which case the reject function is called instead. 
-For our API JS app, my group and I were working with google maps to render some results from an API call on a map on the page based on current user location. Basically we had a function to get the geolocation of the user which needed to be called before the map was rendered on the page and at the same time, we had an API call running to get some data to be rendered on the map. We kept getting error messages on page load about undefined variables since in order to render our map we needed a "center location" which was the return value from our geolocation function. All of these functions were being called on document ready.
+"represents a value which may be available now, or in the future, or never" (Mozilla Developer Network). Promises are good when dealing with asynchronous functionalities. jQuery AJAX requests and fetch requests always return a promise, or a 'thenable' object which essentially passes on the data returned from the request as an argument to a resolve function, unless some error occured in which case a reject function is called instead. 
+For our API JS app, my group and I were working with google maps to render some results from an API call on a map based on current user location. Basically we had a function to get the geolocation of the user which needed to be called before the map was rendered on the page. At the same time, we had an API call running to get some data to be rendered on the map. We kept getting error messages on page load about undefined variables since in order to render our map we needed a "center location" which was the return value from our geolocation function. All of these functions were being called on document ready.
 The solution was to make these functions return a promise and that way have better control of the order in which each one executes. Here is an example of how we created a promise out of our function to get the location of the user:
 
 
