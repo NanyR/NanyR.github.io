@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "Aligned..."
+date:   2017-04-30 23:45:45 +0000
+---
+
+
+Alignment is a pretty important concept that one should understand when styling a page; understanding how each element sits on the page and how its position can affect other elements around it is crucial in order to achieve coherent layouts.
+There are several ways to manage layouts with CSS properties as I came to find out while working on an interactive web app. In this blog post I will briefly go over basics of the display property, as it became the one I ended up using for my layout needs.
+
+First, it is important to touch base on the concept of collapsing margins. One quick example is vertical margins. If there is no padding, margin, border or content around a particular element and its containing element to separate the two margins, the margins collapse to the largest of the two. In the example below, that gap between the header div and the top of the body is a result of **collapsing margins**. This can easily be checked if you inspect the element on the 'Computed' tab of the developer tools. 
+
+![](http://res.cloudinary.com/dletp3dah/image/upload/v1493259346/Screen_Shot_2017-04-26_at_10.14.14_PM_l1bpnz.png)
+
+In this case, we can see the collpasing margin in the gap between the div that contains the h1 element and the top of the body, where the h1 margin collapsed to its containing div's margin resulting in an unwanted 20px margin. This can be solved by specifying a top margin of 0 for the div.
+
+![](http://res.cloudinary.com/dletp3dah/image/upload/v1493260047/Screen_Shot_2017-04-26_at_10.25.41_PM_ahrqxq.png)
+
+It is also important to keep in mind the box-sizing model when thinking about padding, border and margin. The default value of all elements for box-sizing is content-box which includes only content; width and height properties of an element are interpreted only as far as their content goes, padding, border and margin are not considered (this can be changed to border-box if desired in which case both padding and border would be included in the width and height).
+
+So lets talk about display. Each element has its own default **display** property, either inline or block. Block elements stack on top of each other, they do not share the width of their parent container with any other elements. Inline elements only expand the width of their content so they share the width of their parent container with other elements. For example, when creating a navigation bar, or a toolbar we essentially would want an unordered list containing list elements,
+
+![](http://res.cloudinary.com/dletp3dah/image/upload/v1493348426/Screen_Shot_2017-04-27_at_10.54.49_PM_mxm67y.png)
+
+If we wanted to have this list horizontally, we would need to set the display property of all list elements to inline, (by default, list elements are block elements). 
+
+![](http://res.cloudinary.com/dletp3dah/image/upload/v1493348431/Screen_Shot_2017-04-27_at_10.55.50_PM_e5u9no.png)
+
+
+Note: inline elements will not render any heigth or width property, or top/bottom margin. 
+
+Another option for display is inline-block. This is often used when a specific width and height is needed or top/bottom margin. They behave as inline elements in that they share its container's width with other elements but their size can be manipulated as with block elements.
+
+Having two elements sitting next to each other can lead to other challenges. Two basic examples would be having a layout where two or more columns are displayed inline, or a basic toolbar with different kinds of elements (such as icons, select bars, text, etc). This is where alignment comes in.
+It is important to understand that each kind of element has its own different default properties and behaviors so it is not uncommon to end up with uneven layouts even after changing a display property value of a set of elements
+
+![](http://res.cloudinary.com/dletp3dah/image/upload/v1493583943/Screen_Shot_2017-04-30_at_4.06.41_PM_s8fduh.png)
+
+All of the elements in the above toolbar are children of an unordered list element which has all of its children displayed inline-block. The problem here is that select menus and input fields are not rendered in the browser as image elements are. 
+My solution here was to add a vertical-align property to both the select menu and the input field and give it a value of "top" to  align them with the rest of its siblings within the toolbar.
+
+![](http://res.cloudinary.com/dletp3dah/image/upload/v1493585831/Screen_Shot_2017-04-25_at_11.49.16_PM_nfjbtl.png)
+
+
+Aligning these elements to the top worked for me, but this property takes other values as well that will have different results; here is a link to the MDN documentation on vertical-align [https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align?v=control](https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align?v=control) which lists all values that can be given and provides with an explanation on how they are used.
+
+
+When coming across situations where padding and margin changes are either not doing anything or making the layout worst, think of the bigger picture, the answer will most likely be in the box model or in some layout property that needs to be given or changed somewhere on the page. Vertical-align is an easy fix and pretty straight forward. As I mentioned above, there are other layout properties that CSS offers, such as float and position, but I will leave that for another blog post.
+
+
