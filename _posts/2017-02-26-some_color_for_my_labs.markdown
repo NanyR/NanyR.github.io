@@ -6,7 +6,7 @@ date:   2017-02-25 20:38:25 -0500
 
 
 This past week we got to work with the internet. It was pretty cool to notice how we are connecting the dots on the concepts we have learned and practiced with for the first couple of weeks.
-Seeing our work on the internet gives me some reassurance which is very much appreciated during these times of intense learning of abstract concepts. I am a visual learner, and seeing my code with as a concrete product helps me make more sense of what is going on. Having said that, plain html is boring, and ugly, and being stuck for days trying to pass all the tests on some of these labs tends to be frustrating and painful so I decided to add some color and style to my labs.
+Seeing our work on the internet gives me some reassurance which is very much appreciated during these times of intense learning of abstract concepts. I am a visual learner, and seeing my code as a concrete product helps me make more sense of what is going on. Having said that, plain html is boring, and ugly, and being stuck for days on some of these labs tends to be frustrating and painful, especially when the site looks like craigslist.com so I decided to add some color and style to my labs.
 
 The idea is to create a pretty basic css stylesheet to target things like background color, font and, in the case of this particular section of learn, forms. Having a layout.rb file is great to set up a template for all of my views. This is where you link the font and stylesheets (inside the head element)
 
